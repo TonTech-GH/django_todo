@@ -17,7 +17,7 @@ class TodoCreate(CreateView):
     template_name = 'create.html'
     model = models.TodoModel
     
-    # 生成時の入力対象データを指定(form.as_pに対応)
+    # 生成時の入力対象データを指定(htmlの {{ form.as_p }} に対応)
     fields = ('title', 'memo', 'priority', 'duedate')
     
     # データ作成成功時のURL指定

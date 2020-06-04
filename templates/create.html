@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<!-- csrf_token でdjangoがCSRFの検証を行ってくれる(無いとエラーが出る) -->
 <form action="" method="POST">{% csrf_token %}
+    <!-- モデルの入力対象データを pタグで囲った入力フォームとして構築する -->
     {{form.as_p}}
     <input type="submit" value="作成する">
 </form>

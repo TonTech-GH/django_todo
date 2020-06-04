@@ -14,6 +14,8 @@
 {% block content %}
 <!-- 横幅の調整 -->
 <div class="container">
+
+<!-- object_listはDBの中身をリストとして保存しているオブジェクト -->
 {% for item in object_list %}
 
 <div class="alert alert-{{ item.priority }}" role="alert">
