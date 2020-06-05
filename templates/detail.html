@@ -2,17 +2,23 @@
 
 <!-- ヘッダー -->
 {% block header %}
-<h2>Detail</h2>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Todo詳細</h1>
+    <p class="lead">Todoの詳細を確認しよう</p>
+  </div>
+</div>
 {% endblock header %}
 
 <!-- コンテンツ -->
 {% block content %}
-<div class="alert alert-primary" role="alert">
-  <!-- object はDBの中身の1レコードのオブジェクト -->
-  {{ object.title }}
-</div>
-
-<div class="alert alert-primary" role="alert">
-  {{ object.memo  }}    
+<!-- 横幅を良い感じにしてくれるclass -->
+<div class="container">
+  <div class="alert alert-success" role="alert">
+    <h2>{{ object.title   }}</h2>
+    <p>期日：{{ object.duedate }}</p>
+    <hr>
+    <p>{{ object.memo    }}</p>
+  </div>
 </div>
 {% endblock content %}
