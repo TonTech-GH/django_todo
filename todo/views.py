@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView, CreateView
+from django.views.generic import ListView, DetailView, CreateView, DeleteView
 from . import models
 from django.urls import reverse_lazy
 
@@ -24,4 +24,9 @@ class TodoCreate(CreateView):
     # path名を指定してそれに紐づくURLに遷移する
     # class based viewで使う時はreverse_lazy()
     # function based viewではreverse()
+    success_url = reverse_lazy('list')
+
+class TodoDelete(DeleteView):
+    template_name = 'delete.html'
+    model = models.TodoModel
     success_url = reverse_lazy('list')
